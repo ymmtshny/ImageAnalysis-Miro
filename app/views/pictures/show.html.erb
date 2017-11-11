@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <td>画像</td>
+    <td><%= image_tag @picture.image.url(:medium) %></td>
+  </tr>
+  <% @colors.to_rgb.each_with_index do |rgb,index| %>
+      <tr>
+        <td><%= @colors.to_rgb[index] %></td>
+        <td>
+          <div class="color_box" style="background-color: <%= @colors.to_hex[index] %>"></div>
+          <%= number_to_percentage(@colors.by_percentage[index] * 100) %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
+
+<style type="text/css">
+  .color_box {
+    width: 12px;
+    height: 12px;
+    display: block;
+  }
+</style>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
