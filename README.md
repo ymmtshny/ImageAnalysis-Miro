@@ -1,24 +1,8 @@
-# README
+# ImageAnalysis-Miro
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![https://raw.githubusercontent.com/ymmtshny/ImageAnalysis-Miro/master/screenshot.png](https://raw.githubusercontent.com/ymmtshny/ImageAnalysis-Miro/master/screenshot.png)
 
-Things you may want to cover:
 
-* Ruby version
+# Gem Miro
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[https://github.com/jonbuda/miro](https://github.com/jonbuda/miro)
