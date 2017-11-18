@@ -2,16 +2,21 @@
 
 <p id="notice"><%= notice %></p>
 <div>
+  <%= image_tag @picture.image.url(:gray) %>
   <%= image_tag @picture.image.url(:medium) %>
 </div>
 
 <div class="colors-bar">
+  <% dark_percent = 0 %>
   <% @colors.to_rgb.each_with_index do |rgb,index| %>
       <div class="color-bar-box" style="background-color: <%= @colors.to_hex[index] %>; width: <%= @colors.by_percentage[index] * 100 %>%"></div>
+      <b><%= @colors.to_rgb[index][0] %></b>
       <span><%= number_to_percentage(@colors.by_percentage[index] * 100) %></span>
-      <span><%= @colors.to_rgb[index] %></span>
+      <% dark_percent += @colors.by_percentage[index] * 100 if @colors.to_rgb[index][0] <= 5 %>
   <% end %>
 </div>
+
+<h3>RGB(n,n,n) where n<= 5 => <%= dark_percent %> %</h3>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>

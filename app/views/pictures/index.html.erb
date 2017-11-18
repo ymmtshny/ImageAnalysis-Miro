@@ -12,7 +12,11 @@
   <tbody>
   <% @pictures.each do |picture| %>
       <tr>
-        <td><%= image_tag picture.image.url(:thumb) %></td>
+        <td><%= image_tag picture.image.url(:medium), style:'width:100px'%></td>
+        <td><%= image_tag picture.image.url(:gray), style:'width:100px'%></td>
+        <td><%= number_to_percentage(picture.dark_percent(4)) %></td>
+        <td><%= number_to_percentage(picture.dark_percent(5)) %></td>
+        <td><%= number_to_percentage(picture.dark_percent(6)) %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
         <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>

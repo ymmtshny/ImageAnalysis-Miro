@@ -10,7 +10,8 @@ class PicturesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.json
   def show
-    @colors = Miro::DominantColors.new(@picture.image.path)
+    @colors = Miro::DominantColors.new(@picture.image.path(:gray))
+
   end
 
   # GET /pictures/new
